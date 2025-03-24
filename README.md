@@ -1,18 +1,33 @@
-## Getting Started
+## Minha solução em UML do desafio.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+```mermaid
+classDiagram
+    class AparelhoTelefonico {
+        #ligar(String numero)
+        #atender()
+        #iniciarCorreioVoz()
+    }
 
-## Folder Structure
+    class ReprodutorMusical {
+        <<interface>>
+        +playMusic(String musica)
+        +pauseMusic()
+        +stopMusic()
+    }
 
-The workspace contains two folders by default, where:
+    class NavegadorNaInternet {
+        <<interface>>
+        +abrirPagina(String url)
+        +atualizarPagina()
+        +adicionarAosFavoritos(String url)
+    }
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    class IPhone {
+        -sistemaOperacional: String = "Linux"
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    AparelhoTelefonico <|-- IPhone
+    IPhone ..|> ReprodutorMusical
+    IPhone ..|> NavegadorNaInternet
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
